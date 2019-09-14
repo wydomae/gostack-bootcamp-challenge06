@@ -84,7 +84,6 @@ export default class Main extends Component {
 
     const index = users.map(info => info.login).indexOf(user.login);
 
-    console.tron.log(index);
     updatedUsers.splice(index, 1);
 
     this.setState({
