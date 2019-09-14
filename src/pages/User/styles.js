@@ -13,6 +13,14 @@ export const Header = styled.View`
   border-color: #eee;
 `;
 
+export const CloseButton = styled(RectButton)`
+  flex-direction: row;
+  width: 20px;
+  height: 20px;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
 export const Avatar = styled.Image`
   width: 100px;
   height: 100px;

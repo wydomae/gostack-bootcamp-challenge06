@@ -12,6 +12,9 @@ import {
   SubmitButton,
   List,
   User,
+  ContainerButton,
+  CloseButton,
+  CloseButtonText,
   Avatar,
   Name,
   Bio,
@@ -75,6 +78,20 @@ export default class Main extends Component {
     Keyboard.dismiss();
   };
 
+  handleDeleteUser = user => {
+    const { users } = this.state;
+    const updatedUsers = [...users];
+
+    const index = users.map(info => info.login).indexOf(user.login);
+
+    console.tron.log(index);
+    updatedUsers.splice(index, 1);
+
+    this.setState({
+      users: updatedUsers,
+    });
+  };
+
   handleNatigate = user => {
     const { navigation } = this.props;
 
@@ -110,6 +127,11 @@ export default class Main extends Component {
           keyExtractor={user => user.login}
           renderItem={({ item }) => (
             <User>
+              <ContainerButton>
+                <CloseButton onPress={() => this.handleDeleteUser(item)}>
+                  <CloseButtonText>X</CloseButtonText>
+                </CloseButton>
+              </ContainerButton>
               <Avatar source={{ uri: item.avatar }} />
               <Name>{item.name}</Name>
               <Bio>{item.bio}</Bio>

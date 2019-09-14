@@ -40,6 +40,30 @@ export const List = styled.FlatList.attrs({
   margin-top: 20px;
 `;
 
+export const ContainerButton = styled.View`
+  flex: 1;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  align-self: stretch;
+`;
+
+export const CloseButton = styled(RectButton)`
+  width: 20px;
+  height: 20px;
+  background: #7159c1;
+  border-radius: 5px;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+
+export const CloseButtonText = styled.Text`
+  color: #fff;
+  font-size: 14px;
+`;
+
 export const User = styled.View`
   align-items: center;
   margin: 0 20px 30px;
